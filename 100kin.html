@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ここは100均でいい</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<style>
+/* 左右に分ける1カラム。ケチっていい側とそうでない側を、色で分けて見せる */
+:root{
+  --bg:#FAF7F2;
+  --surface:#FFFFFF;
+  --ink:#3F3431;
+  --muted:#8A7B75;
+  --accent:#EFC7CB;
+  --accent-deep:#C98B92;
+  --ok:#8FA98C;
+  --ok-bg:#F2F5F0;
+  --warn-bg:#FBF2F3;
+  --line:#EAE2DA;
+  --font-display:"Zen Maru Gothic","Hiragino Maru Gothic ProN","ヒラギノ丸ゴ ProN",sans-serif;
+  --font-body:"Noto Sans JP","Hiragino Sans","ヒラギノ角ゴシック",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#211C1A; --surface:#2B2422; --ink:#F0E8E3; --muted:#AD9C94;
+    --accent:#6E4F52; --accent-deep:#E8B2B9;
+    --ok:#9BB398; --ok-bg:#262E25; --warn-bg:#332528; --line:#3B322F;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#211C1A; --surface:#2B2422; --ink:#F0E8E3; --muted:#AD9C94;
+  --accent:#6E4F52; --accent-deep:#E8B2B9;
+  --ok:#9BB398; --ok-bg:#262E25; --warn-bg:#332528; --line:#3B322F;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+body{background:var(--bg); color:var(--ink);
+  font-family:var(--font-body); font-size:16px; line-height:1.9;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:620px; margin:0 auto;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-block:0}
+h1,h2,h3{font-family:var(--font-display); text-wrap:balance; margin:0}
+a{color:inherit}
+
+.hero{padding-block:56px 36px}
+.hero .who{font-size:.78rem; letter-spacing:.14em; color:var(--muted);
+  display:flex; align-items:center; gap:10px; margin-bottom:18px}
+.hero .who::after{content:""; flex:1; height:1px; background:var(--line)}
+h1{font-size:2.05rem; line-height:1.45; font-weight:700}
+h1 em{font-style:normal; color:var(--accent-deep)}
+.lede{margin-top:20px; color:var(--muted); font-size:.95rem}
+
+/* 二分割の図 */
+.split{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:48px}
+.half{border-radius:14px; padding:20px 18px; border:1px solid var(--line); min-width:0}
+.half.spend{background:var(--warn-bg)}
+.half.save{background:var(--ok-bg)}
+.half .tag{font-size:.72rem; letter-spacing:.12em; display:block; margin-bottom:8px}
+.half.spend .tag{color:var(--accent-deep)}
+.half.save .tag{color:var(--ok)}
+.half h2{font-size:1.05rem; line-height:1.5; margin-bottom:8px}
+.half p{margin:0; font-size:.88rem; color:var(--muted)}
+@media (max-width:420px){.split{grid-template-columns:1fr}}
+
+.chapter{margin-bottom:44px}
+.chapter > h2{font-size:1.3rem; display:flex; align-items:baseline; gap:12px; margin-bottom:6px}
+.chapter > h2 .en{font-family:var(--font-body); font-size:.68rem; letter-spacing:.18em;
+  color:var(--muted); font-weight:500}
+.chapter > .note{color:var(--muted); font-size:.88rem; margin:0 0 20px}
+
+.items{display:flex; flex-direction:column; gap:1px; background:var(--line);
+  border:1px solid var(--line); border-radius:14px; overflow:hidden}
+.item{background:var(--surface); padding:20px 22px; min-width:0;
+  display:flex; gap:16px; align-items:flex-start}
+.item .ico{flex:0 0 66px; width:66px; height:66px; border-radius:12px;
+  background:#FAF7F2; border:1px solid var(--line); display:block}
+.item .body{flex:1; min-width:0}
+.item h3{font-size:1rem; margin-bottom:6px; line-height:1.6}
+.item p{margin:0; font-size:.93rem}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .item .ico{opacity:.9}}
+:root[data-theme="dark"] .item .ico{opacity:.9}
+
+/* 気をつけてるもの */
+.careful{display:flex; flex-direction:column; gap:12px}
+.care{background:var(--surface); border:1px solid var(--line); border-left:3px solid var(--accent-deep);
+  border-radius:10px; padding:16px 18px}
+.care h3{font-size:.97rem; margin-bottom:5px}
+.care p{margin:0; font-size:.9rem; color:var(--muted)}
+
+/* お手入れ */
+.care-list{display:flex; flex-direction:column; gap:1px; background:var(--line);
+  border:1px solid var(--line); border-radius:14px; overflow:hidden}
+.care-row{background:var(--surface); padding:16px 20px; display:flex; gap:14px; align-items:baseline}
+.care-row .k{flex:0 0 7.5em; font-family:var(--font-display); font-size:.9rem}
+.care-row .v{flex:1; min-width:0; font-size:.9rem}
+.care-row .v .src{display:block; color:var(--muted); font-size:.75rem; margin-top:4px}
+@media (max-width:420px){.care-row{flex-direction:column; gap:4px}.care-row .k{flex:none}}
+
+.links{margin:56px 0 0; padding-block:36px 0; border-top:1px solid var(--line)}
+.links h2{font-size:1.15rem; margin-bottom:8px}
+.links > p{color:var(--muted); font-size:.88rem; margin:0 0 22px}
+.card{display:block; text-decoration:none; background:var(--surface);
+  border:1px solid var(--line); border-radius:14px; padding:18px 20px;
+  transition:border-color .18s ease, transform .18s ease}
+.card:hover,.card:focus-visible{border-color:var(--accent-deep); transform:translateY(-1px)}
+.card:focus-visible{outline:2px solid var(--accent-deep); outline-offset:2px}
+.card .t{font-family:var(--font-display); font-weight:700; font-size:1rem; display:block}
+.card .d{color:var(--muted); font-size:.86rem; display:block; margin-top:4px}
+.card .go{color:var(--accent-deep); font-size:.82rem; margin-top:10px; display:inline-block}
+.todo{background:repeating-linear-gradient(45deg,var(--accent) 0 8px,transparent 8px 16px);
+  border:1px dashed var(--accent-deep)}
+.todo .d{color:var(--ink)}
+
+.more{margin-top:28px; font-size:.9rem}
+.more a{color:var(--accent-deep)}
+
+footer{margin-top:52px; padding-block:28px 56px; border-top:1px solid var(--line);
+  color:var(--muted); font-size:.8rem}
+footer p{margin:0 0 10px}
+footer .pr{display:inline-block; border:1px solid var(--line); border-radius:6px;
+  padding:3px 9px; font-size:.74rem; margin-bottom:12px}
+footer ul{margin:8px 0 0; padding-left:1.1em}
+footer li{margin-bottom:3px}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media (max-width:420px){h1{font-size:1.72rem} .item,.card{padding-left:18px; padding-right:18px}}
+</style>
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}</style>
+</head>
+<body>
+
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="who">あかり ／ @akari_3min_care</div>
+    <h1>全部にお金をかけるのは、<br>やめました</h1>
+    <p class="lede">スキンケアを続けられなかった理由のひとつが、全部ちゃんとしようとしたことでした。今は線を引いています。</p>
+  </header>
+
+  <div class="split">
+    <div class="half spend">
+      <span class="tag">ここはちゃんと選ぶ</span>
+      <h2>肌に触れる物</h2>
+      <p>化粧水、乳液、日焼け止め、クレンジング</p>
+    </div>
+    <div class="half save">
+      <span class="tag">ここは100均でいい</span>
+      <h2>触れない道具</h2>
+      <p>ヘアバンド、ネット、ケース、鏡</p>
+    </div>
+  </div>
+
+  <section class="chapter">
+    <h2>100均でいいもの<span class="en">TOOLS</span></h2>
+    <p class="note">肌につかないか、使い捨てか、毎回洗えるもの。</p>
+    <div class="items">
+
+      <div class="item">
+        <img class="ico" src="k_band.png" alt="ヘアバンド" width="66" height="66">
+        <div class="body">
+          <h3>ヘアバンド</h3>
+          <p>顔につくのは髪の生え際だけ。洗えるので、違いが出にくいところでした。</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img class="ico" src="k_clip.png" alt="ヘアクリップ" width="66" height="66">
+        <div class="body">
+          <h3>ヘアクリップ・ピン</h3>
+          <p>洗顔のとき前髪を留めるだけ。肌につきません。</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img class="ico" src="k_spatula.png" alt="スパチュラ" width="66" height="66">
+        <div class="body">
+          <h3>コスメスパチュラ</h3>
+          <p>クリームを指で取るのをやめました。容器に指を入れずに済むので、むしろこっちのほうが清潔です。毎回洗えます。</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img class="ico" src="k_net.png" alt="泡立てネット" width="66" height="66">
+        <div class="body">
+          <h3>泡立てネット</h3>
+          <p>洗顔料を泡立てるだけの道具です。手で作るより早く終わります。乾かして使う前提で。</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img class="ico" src="k_case.png" alt="コットンケース" width="66" height="66">
+        <div class="body">
+          <h3>綿棒・コットンのケース</h3>
+          <p>中身に触れるだけで、肌にはつきません。見えるところに置いておくと、ちゃんと使います。</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img class="ico" src="k_box.png" alt="収納ボックス" width="66" height="66">
+        <div class="body">
+          <h3>収納ケース</h3>
+          <p>中身が見えれば役目は終わりです。透明なものにしています。</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img class="ico" src="k_mirror.png" alt="卓上の鏡" width="66" height="66">
+        <div class="body">
+          <h3>卓上の鏡</h3>
+          <p>映れば充分でした。</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img class="ico" src="k_paper.png" alt="あぶらとり紙" width="66" height="66">
+        <div class="body">
+          <h3>あぶらとり紙</h3>
+          <p>肌につきますが、使い捨てです。だから気にしていません。</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="chapter">
+    <h2>ここは気をつけてる<span class="en">CAREFUL</span></h2>
+    <p class="note">安いからやめる、ではなくて、選び方を変えているところです。</p>
+    <div class="careful">
+
+      <div class="care">
+        <h3>小分けボトルは、旅行のときだけ</h3>
+        <p>化粧品を別の容器に移すことを、メーカーはすすめていません。資生堂は「洗った容器が完全に乾燥しないと、残った水の影響で菌などが繁殖し、品質を保てなくなることがあります」と書いています。普段は入れ替えないことにしました。</p>
+      </div>
+
+      <div class="care">
+        <h3>パフ・スポンジは、早めに替える</h3>
+        <p>肌に毎日当たる道具です。洗って使い続けるより、安いものを早めに替えるほうが、自分には楽でした。</p>
+      </div>
+
+      <div class="care">
+        <h3>メイクブラシは、安さで選ばない</h3>
+        <p>当たりが気になるので、ここだけは値段で決めていません。</p>
+      </div>
+
+      <div class="care">
+        <h3>持ち歩きの小さなケースは、中身を移さない</h3>
+        <p>ケースそのものは100均のものです。ただ、中に入れるのは試供品で、本体から移し替えることはしていません。</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="chapter">
+    <h2>道具のお手入れ<span class="en">CLEAN</span></h2>
+    <p class="note">ここは全部、メーカーが書いていることです。</p>
+    <div class="care-list">
+
+      <div class="care-row">
+        <span class="k">洗う頻度</span>
+        <span class="v">「きれいな面がなくなったら洗うのが理想的」。週に1度、休みの日の習慣にする形がすすめられていました。
+          <span class="src">コーセー</span></span>
+      </div>
+
+      <div class="care-row">
+        <span class="k">洗剤の割合</span>
+        <span class="v">「水またはぬるま湯200に対して中性洗剤1が目安です」。
+          <span class="src">資生堂</span></span>
+      </div>
+
+      <div class="care-row">
+        <span class="k">つけ置き</span>
+        <span class="v">「つけおき洗いをしない」「高温のお湯を使わない」。
+          <span class="src">資生堂</span></span>
+      </div>
+
+      <div class="care-row">
+        <span class="k">水気の取り方</span>
+        <span class="v">絞らずに、清潔なタオルにくるんで吸い取らせる。
+          <span class="src">コーセー</span></span>
+      </div>
+
+      <div class="care-row">
+        <span class="k">乾かし方</span>
+        <span class="v">「風通しのよい日かげで十分に乾かしてからお使いください」。2枚以上あるときは、支え合うように立てると早く乾きます。
+          <span class="src">資生堂</span></span>
+      </div>
+
+      <div class="care-row">
+        <span class="k">替えどき</span>
+        <span class="v">表面が粗くなる、穴があく、弾力がなくなってゴワつく。使い心地や仕上がりが変わったときが目安だそうです。
+          <span class="src">資生堂</span></span>
+      </div>
+
+      <div class="care-row">
+        <span class="k">無水エタノール</span>
+        <span class="v">化粧用具を無水エタノールで洗う方法が紹介されていることがありますが、材質の品質に影響するため、すすめられていませんでした。
+          <span class="src">資生堂</span></span>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="links">
+    <h2>ちゃんと選ぶほう</h2>
+    <p>肌に触れる物だけ、楽天で選んでいます。道具のリンクは置いていません。100均で買えるものなので。</p>
+
+    <a class="card todo" href="#" aria-disabled="true">
+      <span class="t">楽天ROOM</span>
+      <span class="d">化粧水・乳液・クレンジング・日やけ止めなど21件。使っているものと、気になっているものを分けて置いています</span>
+      <span class="go">※ リンクは公開前に入れます</span>
+    </a>
+
+    <p class="more"><a href="index.html">→ 3分で終わるスキンケア（手順のほう）</a></p>
+  </section>
+
+  <footer>
+    <span class="pr">【PR】</span>
+    <p>このページには広告（アフィリエイトリンク）が含まれます。</p>
+    <p>お手入れの項目は、各メーカーが公開している情報をもとにしています。道具の値段は店や時期で変わります。肌に合わないときは使用をやめてください。</p>
+    <p>出典：</p>
+    <ul>
+      <li>資生堂（化粧用具のお手入れ／よくあるご質問）</li>
+      <li>コーセー</li>
+      <li>オルビス（よくあるご質問）</li>
+    </ul>
+    <p style="margin-top:14px">アイコンはAIで作った画像です。</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
