@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>3分で終わるスキンケア</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="3分で終わるスキンケア">
+<meta property="og:title" content="3分で終わるスキンケア">
+<meta property="og:description" content="夜はだいたい限界。それでも3分でやっていること。洗うとき・つけるとき・しまうときの12個。">
+<meta property="og:url" content="https://akari-3min-care.github.io/care/care.html">
+<meta property="og:image" content="https://akari-3min-care.github.io/care/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<style>
+/* 洗面所の棚のように、項目が段に並ぶ1カラム。余白を多めに、朝に読める静かさで */
+:root{
+  --bg:#FAF7F2;
+  --surface:#FFFFFF;
+  --ink:#3F3431;
+  --muted:#8A7B75;
+  --accent:#EFC7CB;
+  --accent-deep:#C98B92;
+  --line:#EAE2DA;
+  --font-display:"Zen Maru Gothic","Hiragino Maru Gothic ProN","ヒラギノ丸ゴ ProN",sans-serif;
+  --font-body:"Noto Sans JP","Hiragino Sans","ヒラギノ角ゴシック",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#211C1A; --surface:#2B2422; --ink:#F0E8E3; --muted:#AD9C94;
+    --accent:#6E4F52; --accent-deep:#E8B2B9; --line:#3B322F;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#211C1A; --surface:#2B2422; --ink:#F0E8E3; --muted:#AD9C94;
+  --accent:#6E4F52; --accent-deep:#E8B2B9; --line:#3B322F;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:var(--font-body); font-size:16px; line-height:1.9;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{
+  max-width:620px; margin:0 auto;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-block:0;
+}
+h1,h2,h3{font-family:var(--font-display); text-wrap:balance; margin:0}
+a{color:inherit}
+
+/* 見出し */
+.hero{padding-block:56px 40px}
+.hero .who{
+  font-size:.78rem; letter-spacing:.14em; color:var(--muted);
+  display:flex; align-items:center; gap:10px; margin-bottom:18px;
+}
+.hero .who::after{content:""; flex:1; height:1px; background:var(--line)}
+h1{font-size:2.05rem; line-height:1.45; font-weight:700; letter-spacing:.01em}
+h1 em{font-style:normal; color:var(--accent-deep)}
+.lede{margin-top:20px; color:var(--muted); font-size:.95rem}
+
+/* 3分の内訳 */
+.why{
+  background:var(--surface); border:1px solid var(--line); border-radius:14px;
+  padding:24px 22px; margin-bottom:48px;
+}
+.why h2{font-size:1.02rem; margin-bottom:14px}
+.why p{margin:0 0 10px; font-size:.93rem}
+.why p:last-child{margin-bottom:0}
+.why .src{color:var(--muted); font-size:.8rem}
+
+/* 章 */
+.chapter{margin-bottom:44px}
+.chapter > h2{
+  font-size:1.3rem; display:flex; align-items:baseline; gap:12px; margin-bottom:6px;
+}
+.chapter > h2 .en{
+  font-family:var(--font-body); font-size:.68rem; letter-spacing:.18em;
+  color:var(--muted); font-weight:500;
+}
+.chapter > .note{color:var(--muted); font-size:.88rem; margin:0 0 20px}
+
+/* 項目 */
+.items{display:flex; flex-direction:column; gap:1px; background:var(--line);
+  border:1px solid var(--line); border-radius:14px; overflow:hidden}
+.item{background:var(--surface); padding:20px 22px; min-width:0;
+  display:flex; gap:16px; align-items:flex-start}
+.item .ico{
+  flex:0 0 66px; width:66px; height:66px; border-radius:12px;
+  background:#FAF7F2; border:1px solid var(--line); display:block;
+}
+.item .body{flex:1; min-width:0}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .item .ico{opacity:.9}}
+:root[data-theme="dark"] .item .ico{opacity:.9}
+.item h3{font-size:1rem; margin-bottom:6px; line-height:1.6}
+.item p{margin:0; font-size:.93rem; color:var(--ink)}
+.item .src{
+  display:inline-block; margin-top:10px; font-size:.76rem; color:var(--muted);
+  letter-spacing:.02em;
+}
+.num{
+  font-family:var(--font-body); font-variant-numeric:tabular-nums;
+  color:var(--accent-deep); font-weight:700; font-size:.84rem; margin-right:.5em;
+}
+
+/* 導線 */
+.links{margin:56px 0 0; padding-block:36px 0; border-top:1px solid var(--line)}
+.links h2{font-size:1.15rem; margin-bottom:8px}
+.links > p{color:var(--muted); font-size:.88rem; margin:0 0 22px}
+.pr{font-size:.78rem; color:var(--muted); margin:0 0 14px; letter-spacing:.02em}
+.linkgrid{display:flex; flex-direction:column; gap:12px}
+.card{
+  display:block; text-decoration:none; background:var(--surface);
+  border:1px solid var(--line); border-radius:14px; padding:18px 20px;
+  transition:border-color .18s ease, transform .18s ease;
+}
+.card:hover,.card:focus-visible{border-color:var(--accent-deep); transform:translateY(-1px)}
+.card:focus-visible{outline:2px solid var(--accent-deep); outline-offset:2px}
+.card .t{font-family:var(--font-display); font-weight:700; font-size:1rem; display:block}
+.card .d{color:var(--muted); font-size:.86rem; display:block; margin-top:4px}
+.card .go{color:var(--accent-deep); font-size:.82rem; margin-top:10px; display:inline-block}
+.todo{
+  background:repeating-linear-gradient(45deg,var(--accent) 0 8px,transparent 8px 16px);
+  border:1px dashed var(--accent-deep); color:var(--ink);
+}
+.todo .d{color:var(--ink)}
+
+/* 商品 */
+.goods{margin:40px 0 0}
+.goods h3{
+  font-family:var(--font-display); font-size:.96rem; margin:0 0 4px;
+  color:var(--accent-deep); letter-spacing:.03em;
+}
+.goods h3 + p{color:var(--muted); font-size:.82rem; margin:0 0 16px}
+.goods + .goods{margin-top:34px}
+.good{
+  border-top:1px solid var(--line); padding:16px 0 0; margin-bottom:16px;
+}
+.good .say{margin:0 0 8px; font-size:.95rem; line-height:1.75}
+.good .plink{
+  color:var(--accent-deep); font-size:.84rem; text-decoration:none;
+  border-bottom:1px solid var(--accent); padding-bottom:1px;
+  display:inline-block; line-height:1.6;
+}
+.good .plink:hover,.good .plink:focus-visible{border-bottom-color:var(--accent-deep)}
+.good .plink:focus-visible{outline:2px solid var(--accent-deep); outline-offset:3px}
+
+/* ふっと */
+footer{
+  margin-top:52px; padding-block:28px 56px; border-top:1px solid var(--line);
+  color:var(--muted); font-size:.8rem;
+}
+footer p{margin:0 0 10px}
+footer .pr{
+  display:inline-block; border:1px solid var(--line); border-radius:6px;
+  padding:3px 9px; font-size:.74rem; margin-bottom:12px;
+}
+footer ul{margin:8px 0 0; padding-left:1.1em}
+footer li{margin-bottom:3px}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media (max-width:420px){
+  h1{font-size:1.72rem}
+  .item,.why,.card{padding-left:18px; padding-right:18px}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="who">あかり ／ @akari_3min_care</div>
+    <h1>夜はだいたい限界。<br>それでも<em>3分</em>でやってること</h1>
+    <p class="lede">化粧水つけずに寝た日、何回もあります。顔は諦めたくないので、短く終わる形だけ続けています。ここは、調べて「へえ」と思ったことの置き場です。</p>
+  </header>
+
+  <section class="why">
+    <h2>なぜ3分なのか</h2>
+    <p>資生堂が紹介している塗り方に「軽圧式塗布法」というものがあって、ひとつの工程につき3回ずつ、<strong>慣れれば1工程60〜90秒</strong>だそうです。</p>
+    <p>化粧水と乳液で2工程。つまり<strong>3分あれば足りる</strong>計算になります。時間がないから削る、ではなくて、もともと長くかけるものではなかったという話でした。</p>
+    <p class="src">出典：資生堂</p>
+  </section>
+
+  <section class="chapter">
+    <h2>洗うとき<span class="en">WASH</span></h2>
+    <p class="note">いちばん雑になりやすいところでした。</p>
+    <div class="items">
+      <div class="item">
+        <img class="ico" src="it_rinse.png" alt="水をすくった両手" width="66" height="66">
+        <div class="body">
+        <h3><span class="num">01</span>すすぎは20回、約1分</h3>
+        <p>「ぬめりがなくなるまで20回程度、約1分間を目安に、人肌程度のぬるま湯で」。数えたことがなかったので、やってみたら全然足りていませんでした。</p>
+        <span class="src">資生堂</span>
+        </div>
+      </div>
+      <div class="item">
+        <img class="ico" src="it_spots.png" alt="顔とすすぎ残しやすい5か所" width="66" height="66">
+        <div class="body">
+        <h3><span class="num">02</span>すすぎ残しやすい5か所</h3>
+        <p>髪の生え際、目頭、小鼻、あご下、フェイスライン。言われてみると、全部わたしが流していない所でした。</p>
+        <span class="src">資生堂</span>
+        </div>
+      </div>
+      <div class="item">
+        <img class="ico" src="it_tzone.png" alt="顔とTゾーンの泡" width="66" height="66">
+        <div class="body">
+        <h3><span class="num">03</span>泡はTゾーンからのせる</h3>
+        <p>皮脂量の多い額・小鼻から。ほおから塗り始めていたので、順番が逆でした。</p>
+        <span class="src">資生堂</span>
+        </div>
+      </div>
+      <div class="item">
+        <img class="ico" src="it_temp.png" alt="シャワーと温度計" width="66" height="66">
+        <div class="body">
+        <h3><span class="num">04</span>湯温は40度以下</h3>
+        <p>湯船もシャワーも。冬はつい熱くしてしまうところです。手洗いは33〜35℃がすすめられていました。冷たすぎると汚れ落ちに時間がかかり、熱すぎるとうるおいが落ちるそうです。</p>
+        <span class="src">資生堂 ／ コーセー</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <h2>つけるとき<span class="en">APPLY</span></h2>
+    <p class="note">順番と置き場所の話です。</p>
+    <div class="items">
+      <div class="item">
+        <img class="ico" src="it_order.png" alt="化粧水と乳液のボトル" width="66" height="66">
+        <div class="body">
+        <h3><span class="num">05</span>洗顔後、化粧水のあとに乳液</h3>
+        <p>乳液・クリームは化粧水の後。順番に迷ったとき、ここに戻ってきます。</p>
+        <span class="src">花王</span>
+        </div>
+      </div>
+      <div class="item">
+        <img class="ico" src="it_cheek.png" alt="顔と両ほおの印" width="66" height="66">
+        <div class="body">
+        <h3><span class="num">06</span>ほおから始める</h3>
+        <p>乾燥しやすい「ほお」から。そのあと額、目まわり、鼻すじ、口元、フェイスライン、首の順。</p>
+        <span class="src">資生堂</span>
+        </div>
+      </div>
+      <div class="item">
+        <img class="ico" src="it_palm.png" alt="開いた手のひら" width="66" height="66">
+        <div class="body">
+        <h3><span class="num">07</span>手のひらには皮脂腺がない</h3>
+        <p>「そもそも手のひらには皮脂腺がなく、手の甲も顔に比べると少なめ」。手が荒れやすい理由がこれで分かりました。</p>
+        <span class="src">コーセー</span>
+        </div>
+      </div>
+      <div class="item">
+        <img class="ico" src="it_knuckle.png" alt="指先のクリーム" width="66" height="66">
+        <div class="body">
+        <h3><span class="num">08</span>ハンドクリームは第1関節まで</h3>
+        <p>コーセーは「人差し指の指先から第1関節まで」、資生堂は「パール粒1〜2コ分」。<strong>会社によって言い方が違います</strong>ので、手元のパッケージに書いてあればそちらが正です。</p>
+        <span class="src">コーセー ／ 資生堂</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <h2>しまうとき<span class="en">STORE</span></h2>
+    <p class="note">ここは知らないままの人が多そうです。</p>
+    <div class="items">
+      <div class="item">
+        <img class="ico" src="it_fridge.png" alt="冷蔵庫とボトル" width="66" height="66">
+        <div class="body">
+        <h3><span class="num">09</span>冷蔵庫はすすめられていない</h3>
+        <p>「出し入れによる急激な温度変化」が理由だそうです。夏に冷やして使うのが良いと思っていたので、これはいちばん意外でした。</p>
+        <span class="src">花王</span>
+        </div>
+      </div>
+      <div class="item">
+        <img class="ico" src="it_shelf.png" alt="窓ぎわの棚" width="66" height="66">
+        <div class="body">
+        <h3><span class="num">10</span>置き場所は常温・直射日光なし</h3>
+        <p>温度と湿度の変化が少ない場所。洗面所の窓ぎわは、たぶん一番向いていません。</p>
+        <span class="src">花王</span>
+        </div>
+      </div>
+      <div class="item">
+        <img class="ico" src="it_cap.png" alt="キャップの外れたボトル" width="66" height="66">
+        <div class="body">
+        <h3><span class="num">11</span>キャップの閉め忘れ</h3>
+        <p>閉まっていないと中身の水分が蒸発して硬くなる、ホコリや雑菌が入る。急いでいる日ほど開けっぱなしにしていました。</p>
+        <span class="src">ポーラ</span>
+        </div>
+      </div>
+      <div class="item">
+        <img class="ico" src="it_autumn.png" alt="枯れ葉" width="66" height="66">
+        <div class="body">
+        <h3><span class="num">12</span>10月ごろから湿度が落ちる</h3>
+        <p>資生堂のデータで、10月を境に急に下がるそうです。気温が下がると空気中の水分量が減り、そこに暖房が重なります。「急に乾いてきた」と感じる時期には理由がありました。</p>
+        <span class="src">資生堂</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="links">
+    <p class="more" style="margin-top:8px;font-size:.95rem"><a href="./" style="color:var(--accent-deep)">→ 楽天で見ているスキンケア（まとめ）</a></p>
+    <p class="more" style="margin-top:14px;font-size:.95rem"><a href="100kin.html" style="color:var(--accent-deep)">→ ここは100均でいい（道具のほう）</a></p>
+  </section>
+
+  <footer>
+    <span class="pr">【PR】</span>
+    <p>このページには広告（アフィリエイトリンク）が含まれます。</p>
+    <p>書いてあることは、各メーカーが公開している情報をもとにしています。効果を保証するものではありません。肌に合わないときは使用をやめてください。</p>
+    <p>出典：</p>
+    <ul>
+      <li>資生堂（ビューティー情報）</li>
+      <li>花王（スキンケア／化粧品Q&amp;A）</li>
+      <li>コーセー</li>
+      <li>ポーラ（サポートQ&amp;A）</li>
+    </ul>
+    <p style="margin-top:14px">アイコンはAIで作った画像です。</p>
+  </footer>
+
+</div>
+
+</body>
+</html>

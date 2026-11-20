@@ -1,397 +1,307 @@
 <!doctype html>
 <html lang="ja">
-<head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>3分で終わるスキンケア</title>
-<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>楽天で見ているスキンケア</title>
 <link rel="icon" href="icon.png">
-<link rel="apple-touch-icon" href="icon.png">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="3分で終わるスキンケア">
-<meta property="og:title" content="3分で終わるスキンケア">
-<meta property="og:description" content="夜はだいたい限界。それでも3分でやっていること。洗うとき・つけるとき・しまうときの12個。">
+<meta property="og:site_name" content="楽天で見ているスキンケア">
+<meta property="og:title" content="楽天で見ているスキンケア">
+<meta property="og:description" content="3分で終わらせたい人の目で選びました。使っているものと、気になっているもの。楽天で見ている17件。">
 <meta property="og:url" content="https://akari-3min-care.github.io/care/">
 <meta property="og:image" content="https://akari-3min-care.github.io/care/og.png">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="apple-touch-icon" href="icon.png">
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
 <style>
-/* 洗面所の棚のように、項目が段に並ぶ1カラム。余白を多めに、朝に読める静かさで */
 :root{
-  --bg:#FAF7F2;
-  --surface:#FFFFFF;
-  --ink:#3F3431;
-  --muted:#8A7B75;
-  --accent:#EFC7CB;
-  --accent-deep:#C98B92;
-  --line:#EAE2DA;
-  --font-display:"Zen Maru Gothic","Hiragino Maru Gothic ProN","ヒラギノ丸ゴ ProN",sans-serif;
-  --font-body:"Noto Sans JP","Hiragino Sans","ヒラギノ角ゴシック",sans-serif;
+  --bg:#FAF7F2; --surface:#FFFFFF; --ink:#3F3431; --muted:#8A7B75;
+  --accent:#EFC7CB; --accent-deep:#C98B92; --line:#EAE2DA;
+  --font-display:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif;
+  --font-body:"Noto Sans JP","Hiragino Sans",sans-serif;
 }
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --bg:#211C1A; --surface:#2B2422; --ink:#F0E8E3; --muted:#AD9C94;
-    --accent:#6E4F52; --accent-deep:#E8B2B9; --line:#3B322F;
-    color-scheme:dark;
-  }
-}
-:root[data-theme="dark"]{
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --bg:#211C1A; --surface:#2B2422; --ink:#F0E8E3; --muted:#AD9C94;
-  --accent:#6E4F52; --accent-deep:#E8B2B9; --line:#3B322F;
-  color-scheme:dark;
-}
-
+  --accent:#6E4F52; --accent-deep:#E8B2B9; --line:#3B322F; color-scheme:dark;}}
+:root[data-theme="dark"]{--bg:#211C1A;--surface:#2B2422;--ink:#F0E8E3;--muted:#AD9C94;--accent:#6E4F52;--accent-deep:#E8B2B9;--line:#3B322F;color-scheme:dark}
 *{box-sizing:border-box}
-body{
-  background:var(--bg); color:var(--ink);
-  font-family:var(--font-body); font-size:16px; line-height:1.9;
-  -webkit-font-smoothing:antialiased;
-}
-.wrap{
-  max-width:620px; margin:0 auto;
-  padding-left:max(16px,env(safe-area-inset-left,0px));
-  padding-right:max(16px,env(safe-area-inset-right,0px));
-  padding-block:0;
-}
-h1,h2,h3{font-family:var(--font-display); text-wrap:balance; margin:0}
-a{color:inherit}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.9;margin:0;-webkit-font-smoothing:antialiased}
+.wrap{max-width:620px;margin:0 auto;padding:0 16px}
+h1,h2,h3{font-family:var(--font-display);margin:0;text-wrap:balance}
 
-/* 見出し */
-.hero{padding-block:56px 40px}
-.hero .who{
-  font-size:.78rem; letter-spacing:.14em; color:var(--muted);
-  display:flex; align-items:center; gap:10px; margin-bottom:18px;
-}
-.hero .who::after{content:""; flex:1; height:1px; background:var(--line)}
-h1{font-size:2.05rem; line-height:1.45; font-weight:700; letter-spacing:.01em}
-h1 em{font-style:normal; color:var(--accent-deep)}
-.lede{margin-top:20px; color:var(--muted); font-size:.95rem}
+.hero{padding:48px 0 28px}
+.hero .who{font-size:.78rem;letter-spacing:.14em;color:var(--muted);display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.hero .who::after{content:"";flex:1;height:1px;background:var(--line)}
+h1{font-size:1.65rem;line-height:1.5}
+.lead{color:var(--muted);font-size:.93rem;margin-top:14px}
 
-/* 3分の内訳 */
-.why{
-  background:var(--surface); border:1px solid var(--line); border-radius:14px;
-  padding:24px 22px; margin-bottom:48px;
-}
-.why h2{font-size:1.02rem; margin-bottom:14px}
-.why p{margin:0 0 10px; font-size:.93rem}
-.why p:last-child{margin-bottom:0}
-.why .src{color:var(--muted); font-size:.8rem}
+.note{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;font-size:.8rem;line-height:1.85;color:var(--muted);margin:22px 0 0}
+.note p{margin:0 0 8px}
+.note p:last-child{margin:0}
 
-/* 章 */
-.chapter{margin-bottom:44px}
-.chapter > h2{
-  font-size:1.3rem; display:flex; align-items:baseline; gap:12px; margin-bottom:6px;
-}
-.chapter > h2 .en{
-  font-family:var(--font-body); font-size:.68rem; letter-spacing:.18em;
-  color:var(--muted); font-weight:500;
-}
-.chapter > .note{color:var(--muted); font-size:.88rem; margin:0 0 20px}
+h2{font-size:1.12rem;margin:44px 0 14px;padding-left:12px;border-left:3px solid var(--accent-deep)}
+.how{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:6px 20px}
+.how dl{margin:0}
+.how dt{font-family:var(--font-display);font-size:.98rem;margin:18px 0 4px}
+.how dd{margin:0 0 18px;color:var(--muted);font-size:.9rem}
 
-/* 項目 */
-.items{display:flex; flex-direction:column; gap:1px; background:var(--line);
-  border:1px solid var(--line); border-radius:14px; overflow:hidden}
-.item{background:var(--surface); padding:20px 22px; min-width:0;
-  display:flex; gap:16px; align-items:flex-start}
-.item .ico{
-  flex:0 0 66px; width:66px; height:66px; border-radius:12px;
-  background:#FAF7F2; border:1px solid var(--line); display:block;
-}
-.item .body{flex:1; min-width:0}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .item .ico{opacity:.9}}
-:root[data-theme="dark"] .item .ico{opacity:.9}
-.item h3{font-size:1rem; margin-bottom:6px; line-height:1.6}
-.item p{margin:0; font-size:.93rem; color:var(--ink)}
-.item .src{
-  display:inline-block; margin-top:10px; font-size:.76rem; color:var(--muted);
-  letter-spacing:.02em;
-}
-.num{
-  font-family:var(--font-body); font-variant-numeric:tabular-nums;
-  color:var(--accent-deep); font-weight:700; font-size:.84rem; margin-right:.5em;
-}
+.band{display:inline-block;font-size:.76rem;letter-spacing:.08em;color:var(--muted);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:5px 14px;margin:34px 0 4px}
 
-/* 導線 */
-.links{margin:56px 0 0; padding-block:36px 0; border-top:1px solid var(--line)}
-.links h2{font-size:1.15rem; margin-bottom:8px}
-.links > p{color:var(--muted); font-size:.88rem; margin:0 0 22px}
-.pr{font-size:.78rem; color:var(--muted); margin:0 0 14px; letter-spacing:.02em}
-.linkgrid{display:flex; flex-direction:column; gap:12px}
-.card{
-  display:block; text-decoration:none; background:var(--surface);
-  border:1px solid var(--line); border-radius:14px; padding:18px 20px;
-  transition:border-color .18s ease, transform .18s ease;
-}
-.card:hover,.card:focus-visible{border-color:var(--accent-deep); transform:translateY(-1px)}
-.card:focus-visible{outline:2px solid var(--accent-deep); outline-offset:2px}
-.card .t{font-family:var(--font-display); font-weight:700; font-size:1rem; display:block}
-.card .d{color:var(--muted); font-size:.86rem; display:block; margin-top:4px}
-.card .go{color:var(--accent-deep); font-size:.82rem; margin-top:10px; display:inline-block}
-.todo{
-  background:repeating-linear-gradient(45deg,var(--accent) 0 8px,transparent 8px 16px);
-  border:1px dashed var(--accent-deep); color:var(--ink);
-}
-.todo .d{color:var(--ink)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:14px;display:flex;gap:16px}
+.band .n{margin-left:10px;color:var(--accent-deep);font-size:.72rem;font-weight:700}
+.card img{width:84px;height:84px;object-fit:contain;border-radius:10px;background:#fff;flex:0 0 84px}
+.card .body{flex:1;min-width:0}
+.brand{font-size:.76rem;letter-spacing:.06em;color:var(--muted)}
+.name{font-family:var(--font-display);font-size:1.02rem;line-height:1.45;margin:3px 0 8px}
+.spec{font-size:.84rem;color:var(--muted);margin:0 0 12px}
+.spec b{color:var(--ink);font-weight:700;font-size:.95rem}
+.rev{font-size:.8rem;color:var(--muted);margin:0 0 12px;display:flex;align-items:center;gap:6px}
+.rev .star{color:var(--accent-deep);font-weight:700}
+.used{display:inline-block;font-size:.7rem;letter-spacing:.06em;background:var(--accent);color:#3F3431;border-radius:999px;padding:3px 10px;margin-left:8px;vertical-align:middle;font-family:var(--font-body);font-weight:700}
+.catlab{margin-left:8px;padding-left:8px;border-left:1px solid var(--line)}
+.noimg{width:84px;height:84px;flex:0 0 84px;border-radius:10px;border:1px dashed var(--line);display:grid;place-items:center;font-size:.72rem;color:var(--muted)}
+.bandnote{font-size:.85rem;color:var(--muted);margin:8px 0 0}
+.go{display:inline-block;font-size:.86rem;text-decoration:none;color:var(--ink);border:1px solid var(--accent-deep);border-radius:999px;padding:7px 18px}
+.go:hover{background:var(--accent)}
+.why{font-size:.85rem;color:var(--muted);margin:10px 0 0;padding-top:10px;border-top:1px dashed var(--line)}
 
-/* 商品 */
-.goods{margin:40px 0 0}
-.goods h3{
-  font-family:var(--font-display); font-size:.96rem; margin:0 0 4px;
-  color:var(--accent-deep); letter-spacing:.03em;
-}
-.goods h3 + p{color:var(--muted); font-size:.82rem; margin:0 0 16px}
-.goods + .goods{margin-top:34px}
-.good{
-  border-top:1px solid var(--line); padding:16px 0 0; margin-bottom:16px;
-}
-.good .say{margin:0 0 8px; font-size:.95rem; line-height:1.75}
-.good .plink{
-  color:var(--accent-deep); font-size:.84rem; text-decoration:none;
-  border-bottom:1px solid var(--accent); padding-bottom:1px;
-  display:inline-block; line-height:1.6;
-}
-.good .plink:hover,.good .plink:focus-visible{border-bottom-color:var(--accent-deep)}
-.good .plink:focus-visible{outline:2px solid var(--accent-deep); outline-offset:3px}
-
-/* ふっと */
-footer{
-  margin-top:52px; padding-block:28px 56px; border-top:1px solid var(--line);
-  color:var(--muted); font-size:.8rem;
-}
-footer p{margin:0 0 10px}
-footer .pr{
-  display:inline-block; border:1px solid var(--line); border-radius:6px;
-  padding:3px 9px; font-size:.74rem; margin-bottom:12px;
-}
-footer ul{margin:8px 0 0; padding-left:1.1em}
-footer li{margin-bottom:3px}
-
-@media (prefers-reduced-motion:reduce){*{transition:none!important}}
-@media (max-width:420px){
-  h1{font-size:1.72rem}
-  .item,.why,.card{padding-left:18px; padding-right:18px}
-}
+footer{margin:56px 0 40px;font-size:.78rem;color:var(--muted);line-height:1.85}
+footer a{color:var(--muted)}
 </style>
-</head>
-<body>
 
 <div class="wrap">
 
-  <header class="hero">
-    <div class="who">あかり ／ @akari_3min_care</div>
-    <h1>夜はだいたい限界。<br>それでも<em>3分</em>でやってること</h1>
-    <p class="lede">化粧水つけずに寝た日、何回もあります。顔は諦めたくないので、短く終わる形だけ続けています。ここは、調べて「へえ」と思ったことの置き場です。</p>
-  </header>
-
-  <section class="why">
-    <h2>なぜ3分なのか</h2>
-    <p>資生堂が紹介している塗り方に「軽圧式塗布法」というものがあって、ひとつの工程につき3回ずつ、<strong>慣れれば1工程60〜90秒</strong>だそうです。</p>
-    <p>化粧水と乳液で2工程。つまり<strong>3分あれば足りる</strong>計算になります。時間がないから削る、ではなくて、もともと長くかけるものではなかったという話でした。</p>
-    <p class="src">出典：資生堂</p>
-  </section>
-
-  <section class="chapter">
-    <h2>洗うとき<span class="en">WASH</span></h2>
-    <p class="note">いちばん雑になりやすいところでした。</p>
-    <div class="items">
-      <div class="item">
-        <img class="ico" src="it_rinse.png" alt="水をすくった両手" width="66" height="66">
-        <div class="body">
-        <h3><span class="num">01</span>すすぎは20回、約1分</h3>
-        <p>「ぬめりがなくなるまで20回程度、約1分間を目安に、人肌程度のぬるま湯で」。数えたことがなかったので、やってみたら全然足りていませんでした。</p>
-        <span class="src">資生堂</span>
-        </div>
-      </div>
-      <div class="item">
-        <img class="ico" src="it_spots.png" alt="顔とすすぎ残しやすい5か所" width="66" height="66">
-        <div class="body">
-        <h3><span class="num">02</span>すすぎ残しやすい5か所</h3>
-        <p>髪の生え際、目頭、小鼻、あご下、フェイスライン。言われてみると、全部わたしが流していない所でした。</p>
-        <span class="src">資生堂</span>
-        </div>
-      </div>
-      <div class="item">
-        <img class="ico" src="it_tzone.png" alt="顔とTゾーンの泡" width="66" height="66">
-        <div class="body">
-        <h3><span class="num">03</span>泡はTゾーンからのせる</h3>
-        <p>皮脂量の多い額・小鼻から。ほおから塗り始めていたので、順番が逆でした。</p>
-        <span class="src">資生堂</span>
-        </div>
-      </div>
-      <div class="item">
-        <img class="ico" src="it_temp.png" alt="シャワーと温度計" width="66" height="66">
-        <div class="body">
-        <h3><span class="num">04</span>湯温は40度以下</h3>
-        <p>湯船もシャワーも。冬はつい熱くしてしまうところです。手洗いは33〜35℃がすすめられていました。冷たすぎると汚れ落ちに時間がかかり、熱すぎるとうるおいが落ちるそうです。</p>
-        <span class="src">資生堂 ／ コーセー</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="chapter">
-    <h2>つけるとき<span class="en">APPLY</span></h2>
-    <p class="note">順番と置き場所の話です。</p>
-    <div class="items">
-      <div class="item">
-        <img class="ico" src="it_order.png" alt="化粧水と乳液のボトル" width="66" height="66">
-        <div class="body">
-        <h3><span class="num">05</span>洗顔後、化粧水のあとに乳液</h3>
-        <p>乳液・クリームは化粧水の後。順番に迷ったとき、ここに戻ってきます。</p>
-        <span class="src">花王</span>
-        </div>
-      </div>
-      <div class="item">
-        <img class="ico" src="it_cheek.png" alt="顔と両ほおの印" width="66" height="66">
-        <div class="body">
-        <h3><span class="num">06</span>ほおから始める</h3>
-        <p>乾燥しやすい「ほお」から。そのあと額、目まわり、鼻すじ、口元、フェイスライン、首の順。</p>
-        <span class="src">資生堂</span>
-        </div>
-      </div>
-      <div class="item">
-        <img class="ico" src="it_palm.png" alt="開いた手のひら" width="66" height="66">
-        <div class="body">
-        <h3><span class="num">07</span>手のひらには皮脂腺がない</h3>
-        <p>「そもそも手のひらには皮脂腺がなく、手の甲も顔に比べると少なめ」。手が荒れやすい理由がこれで分かりました。</p>
-        <span class="src">コーセー</span>
-        </div>
-      </div>
-      <div class="item">
-        <img class="ico" src="it_knuckle.png" alt="指先のクリーム" width="66" height="66">
-        <div class="body">
-        <h3><span class="num">08</span>ハンドクリームは第1関節まで</h3>
-        <p>コーセーは「人差し指の指先から第1関節まで」、資生堂は「パール粒1〜2コ分」。<strong>会社によって言い方が違います</strong>ので、手元のパッケージに書いてあればそちらが正です。</p>
-        <span class="src">コーセー ／ 資生堂</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="chapter">
-    <h2>しまうとき<span class="en">STORE</span></h2>
-    <p class="note">ここは知らないままの人が多そうです。</p>
-    <div class="items">
-      <div class="item">
-        <img class="ico" src="it_fridge.png" alt="冷蔵庫とボトル" width="66" height="66">
-        <div class="body">
-        <h3><span class="num">09</span>冷蔵庫はすすめられていない</h3>
-        <p>「出し入れによる急激な温度変化」が理由だそうです。夏に冷やして使うのが良いと思っていたので、これはいちばん意外でした。</p>
-        <span class="src">花王</span>
-        </div>
-      </div>
-      <div class="item">
-        <img class="ico" src="it_shelf.png" alt="窓ぎわの棚" width="66" height="66">
-        <div class="body">
-        <h3><span class="num">10</span>置き場所は常温・直射日光なし</h3>
-        <p>温度と湿度の変化が少ない場所。洗面所の窓ぎわは、たぶん一番向いていません。</p>
-        <span class="src">花王</span>
-        </div>
-      </div>
-      <div class="item">
-        <img class="ico" src="it_cap.png" alt="キャップの外れたボトル" width="66" height="66">
-        <div class="body">
-        <h3><span class="num">11</span>キャップの閉め忘れ</h3>
-        <p>閉まっていないと中身の水分が蒸発して硬くなる、ホコリや雑菌が入る。急いでいる日ほど開けっぱなしにしていました。</p>
-        <span class="src">ポーラ</span>
-        </div>
-      </div>
-      <div class="item">
-        <img class="ico" src="it_autumn.png" alt="枯れ葉" width="66" height="66">
-        <div class="body">
-        <h3><span class="num">12</span>10月ごろから湿度が落ちる</h3>
-        <p>資生堂のデータで、10月を境に急に下がるそうです。気温が下がると空気中の水分量が減り、そこに暖房が重なります。「急に乾いてきた」と感じる時期には理由がありました。</p>
-        <span class="src">資生堂</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="links">
-    <h2>使っているもの・気になっているもの</h2>
-    <p>楽天で買っているものを置いています。</p>
-    <p class="pr">広告（アフィリエイトリンク）です。押しても料金はかかりません。</p>
-    <div class="linkgrid">
-
-      <a class="card" href="https://room.rakuten.co.jp/room_5f3dddcd04/items" rel="nofollow sponsored noopener" target="_blank">
-        <span class="t">楽天ROOM</span>
-        <span class="d">スキンケアまわりを21件。使っているものと、気になっているものを分けて置いています</span>
-        <span class="go">楽天ROOMのページはここ →</span>
-      </a>
-
-      <a class="card" href="https://hb.afl.rakuten.co.jp/hsc/598a016c.28fd3736.17bea68d.eedc2a27/?link_type=text&amp;ut=eyJwYWdlIjoic2hvcCIsInR5cGUiOiJ0ZXh0IiwiY29sIjoxLCJjYXQiOjEsImJhbiI6Im5hbWUiLCJhbXAiOmZhbHNlfQ%3D%3D" rel="nofollow sponsored noopener" target="_blank">
-        <span class="t">楽天ビューティ</span>
-        <span class="d">美容院のネット予約。口コミとメニューを先に見られるので、電話より気が楽でした</span>
-        <span class="go">楽天ビューティのページはここ →</span>
-      </a>
-
-      <a class="card" href="https://hb.afl.rakuten.co.jp/hsc/5989ef93.3369b3f6.17bea68d.eedc2a27/?link_type=text&amp;ut=eyJwYWdlIjoic2hvcCIsInR5cGUiOiJ0ZXh0IiwiY29sIjoxLCJjYXQiOjEsImJhbiI6Im5hbWUiLCJhbXAiOmZhbHNlfQ%3D%3D" rel="nofollow sponsored noopener" target="_blank">
-        <span class="t">楽天カード</span>
-        <span class="d">5と0のつく日は、カードで払った日が対象だそうです。エントリーは、その日のうちなら買ったあとでも間に合うとのこと</span>
-        <span class="go">楽天カードのページはここ →</span>
-      </a>
-
-    </div>
-    <div class="goods">
-      <h3>使っているもの</h3>
-      <p>今、手元にあるものです。</p>
-      <div class="good">
-        <p class="say">しっとりとさっぱり、季節で入れ替えてる。冬はしっとりのほうを使っています</p>
-        <a class="plink" href="https://hb.afl.rakuten.co.jp/hgc/g00t45po.9mern46a.g00t45po.9mero9eb/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftsurunishi%2F905b01mtmmcmf%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Ftsurunishi%2Fi%2F10000259%2F&amp;rafcid=wsc_i_is_d6ca3db3-7718-4ca9-9b12-793de0ae759e" rel="nofollow sponsored noopener" target="_blank">オルナ オーガニック 保湿化粧水 200ml</a>
-      </div>
-      <div class="good">
-        <p class="say">スパチュラを探さなくていいだけで、朝がちがう。ポンプ式にしてから、だいぶ楽になりました</p>
-        <a class="plink" href="https://hb.afl.rakuten.co.jp/hgc/g00r97bo.9mern6d0.g00r97bo.9mero959/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fa-cueb%2Fbota-ag%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fa-cueb%2Fi%2F10004890%2F&amp;rafcid=wsc_i_is_d6ca3db3-7718-4ca9-9b12-793de0ae759e" rel="nofollow sponsored noopener" target="_blank">オールインワンジェル 180g（ボタニカル）</a>
-      </div>
-      <div class="good">
-        <p class="say">20種類入ってるから、その日の気分で選べる。選ぶのが面倒な日もあるので、そこは好みが分かれるかも</p>
-        <a class="plink" href="https://hb.afl.rakuten.co.jp/hgc/g00qecio.9mernb62.g00qecio.9mero81e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fapm24%2Fmjst40206n-22-set%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fapm24%2Fi%2F10002137%2F&amp;rafcid=wsc_i_is_d6ca3db3-7718-4ca9-9b12-793de0ae759e" rel="nofollow sponsored noopener" target="_blank">MJCARE エッセンスマスク お試し 20種20枚セット</a>
-      </div>
-      <div class="good">
-        <p class="say">夜、これだけはたいて寝る日がある。さらさらして、朝までそのまま。ただ、原料の匂いが少しあります</p>
-        <a class="plink" href="https://hb.afl.rakuten.co.jp/hgc/g00ps7eo.9mernea9.g00ps7eo.9mero577/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnaturalcosmetic%2Fsilkpowder20%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fnaturalcosmetic%2Fi%2F10000961%2F&amp;rafcid=wsc_i_is_d6ca3db3-7718-4ca9-9b12-793de0ae759e" rel="nofollow sponsored noopener" target="_blank">シルクパウダー シルク100% フェイスパウダー 7g</a>
-      </div>
-    </div>
-
-    <div class="goods">
-      <h3>気になっているもの</h3>
-      <p>まだ使っていません。レビューを読んで迷っているところです。</p>
-      <div class="good">
-        <p class="say">さらさらの乳液って書いてあって、迷い中。今使っているのがなくなったら、試すかもしれません</p>
-        <a class="plink" href="https://hb.afl.rakuten.co.jp/hgc/g00po0zo.9mernc82.g00po0zo.9mero819/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fluire%2Fpltpmy000%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fluire%2Fi%2F10004629%2F&amp;rafcid=wsc_i_is_d6ca3db3-7718-4ca9-9b12-793de0ae759e" rel="nofollow sponsored noopener" target="_blank">プリュ プラセンタ モイスチュア ミルク（乳液・大容量）</a>
-      </div>
-      <div class="good">
-        <p class="say">3個まとめてだと、体にも気楽に使える気がする。顔だけだと、いつも余らせてしまうので</p>
-        <a class="plink" href="https://hb.afl.rakuten.co.jp/hgc/g00r97bo.9mern6d0.g00r97bo.9mero959/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fa-cueb%2Fbota-ag3set%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fa-cueb%2Fi%2F10005030%2F&amp;rafcid=wsc_i_is_d6ca3db3-7718-4ca9-9b12-793de0ae759e" rel="nofollow sponsored noopener" target="_blank">オールインワンジェル 180g 3個セット（ボタニカル）</a>
-      </div>
-      <div class="good">
-        <p class="say">シートが厚いって書いてる人がいて、気になってる。薄いのだと、貼っている間にずれてしまうので</p>
-        <a class="plink" href="https://hb.afl.rakuten.co.jp/hgc/g00r97bo.9mern6d0.g00r97bo.9mero959/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fa-cueb%2Fdermal-b15%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fa-cueb%2Fi%2F10000286%2F&amp;rafcid=wsc_i_is_d6ca3db3-7718-4ca9-9b12-793de0ae759e" rel="nofollow sponsored noopener" target="_blank">ダーマル シートマスク 個包装 20枚</a>
-      </div>
-      <div class="good">
-        <p class="say">1枚が大きくて、液だれしないって書いてあった。寝落ちしても床が無事そう、というのがいちばんの理由です</p>
-        <a class="plink" href="https://hb.afl.rakuten.co.jp/hgc/g00slmqo.9mern0be.g00slmqo.9mero0f9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkiso%2Fkiso-m10set%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fkiso%2Fi%2F10000153%2F&amp;rafcid=wsc_i_is_d6ca3db3-7718-4ca9-9b12-793de0ae759e" rel="nofollow sponsored noopener" target="_blank">KISO CARE 高濃度美容原液配合フェイスマスク 個包装</a>
-      </div>
-    </div>
-
-    <p class="more" style="margin-top:28px;font-size:.9rem"><a href="100kin.html" style="color:var(--accent-deep)">→ ここは100均でいい（道具のほう）</a></p>
-  </section>
-
-  <footer>
-    <span class="pr">【PR】</span>
-    <p>このページには広告（アフィリエイトリンク）が含まれます。</p>
-    <p>書いてあることは、各メーカーが公開している情報をもとにしています。効果を保証するものではありません。肌に合わないときは使用をやめてください。</p>
-    <p>出典：</p>
-    <ul>
-      <li>資生堂（ビューティー情報）</li>
-      <li>花王（スキンケア／化粧品Q&amp;A）</li>
-      <li>コーセー</li>
-      <li>ポーラ（サポートQ&amp;A）</li>
-    </ul>
-    <p style="margin-top:14px">アイコンはAIで作った画像です。</p>
-  </footer>
+<div class="hero">
+  <div class="who">あかり｜時間がない人の美容</div>
+  <h1>楽天で見ているスキンケア</h1>
+  <p class="lead">3分で終わらせたい人の目で選びました。<br><b>種類ごと</b>に分けて、それぞれ楽天市場のレビュー件数が多い順に並べています。<br><b>「使ってる」</b>と付いているのが、今わたしが手元に持っているものです。</p>
 
 </div>
 
-</body>
-</html>
+<h2>どう選んだか</h2>
+<div class="how">
+  <dl>
+    <dt>続けられる値段か</dt>
+    <dd>1本で終わるものより、来年も同じものを買えるかで見ています。</dd>
+    <dt>朝でも間に合うか</dt>
+    <dd>手に出してすぐなじむか。コットンが要るものは、朝のわたしには向きませんでした。</dd>
+    <dt>詰め替えがあるか</dt>
+    <dd>詰め替えがあると、続けるときに値段が下がります。ボトルを捨てる手間も減ります。</dd>
+  </dl>
+</div>
+
+<div class="band">クレンジング<span class="n">1</span></div>
+<div class="card">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/fancl-shop/cabinet/item-img/3500-3999_2/3721-31_2603.jpg?_ex=300x300" alt="マイルドクレンジング オイル（つめかえ用）">
+  <div class="body">
+    <div class="brand">ファンケル</div>
+    <div class="name">マイルドクレンジング オイル（つめかえ用）</div>
+    <p class="spec"><b>1,870円</b></p>
+    <p class="rev"><span class="star">★ 4.85</span><span>楽天のレビュー 13,657件</span></p>
+    <a class="go" href="https://hb.afl.rakuten.co.jp/hgc/g00sms5o.9mernb58.g00sms5o.9merod3a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ffancl-shop%2F3721-32%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ffancl-shop%2Fi%2F10009421%2F&rafcid=wsc_i_is_d6ca3db3-7718-4ca9-9b12-793de0ae759e" rel="nofollow sponsored noopener" target="_blank">楽天市場で見る</a>
+    <p class="why">このページでレビューがいちばん多い商品です。つめかえ用なので、続けるならこの形が好きです</p>
+  </div>
+</div>
+<div class="band">洗顔<span class="n">2</span></div>
+<div class="card">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/fancl-shop/cabinet/item-img/3500-3999/3670-11.jpg?_ex=300x300" alt="洗顔パウダー">
+  <div class="body">
+    <div class="brand">ファンケル</div>
+    <div class="name">洗顔パウダー</div>
+    <p class="spec"><b>1,320円</b></p>
+    <p class="rev"><span class="star">★ 4.79</span><span>楽天のレビュー 2,938件</span></p>
+    <a class="go" href="https://hb.afl.rakuten.co.jp/hgc/g00sms5o.9mernb58.g00sms5o.9merod3a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ffancl-shop%2F3670-11%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ffancl-shop%2Fi%2F10009026%2F&rafcid=wsc_i_is_d6ca3db3-7718-4ca9-9b12-793de0ae759e" rel="nofollow sponsored noopener" target="_blank">楽天市場で見る</a>
+    <p class="why">粉タイプ。泡立てネットは100均のを使っているので、合うのか気になっています</p>
+  </div>
+</div>
+<div class="card">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/attenir/cabinet/thum/116228_thumb_v2.jpg?_ex=300x300" alt="コンフォートムースウォッシュ">
+  <div class="body">
+    <div class="brand">アテニア</div>
+    <div class="name">コンフォートムースウォッシュ</div>
+    <p class="spec"><b>1,430円</b>　ボトル／つめかえ用</p>
+    <p class="rev"><span class="star">★ 4.59</span><span>楽天のレビュー 813件</span></p>
+    <a class="go" href="https://hb.afl.rakuten.co.jp/hgc/g00tna6o.9merne6c.g00tna6o.9mero3ea/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fattenir%2F116228%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fattenir%2Fi%2F10000615%2F&rafcid=wsc_i_is_d6ca3db3-7718-4ca9-9b12-793de0ae759e" rel="nofollow sponsored noopener" target="_blank">楽天市場で見る</a>
+    <p class="why">ワンプッシュで泡が出るタイプ。朝に合いそうだと思って見ています</p>
+  </div>
+</div>
+<div class="band">化粧水<span class="n">3</span></div>
+<div class="card">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/tsurunishi/cabinet/allna/14069354/905b01mtmmcmf_1.jpg?_ex=300x300" alt="保湿化粧水 200ml">
+  <div class="body">
+    <div class="brand">オルナ オーガニック</div>
+    <div class="name">保湿化粧水 200ml<span class="used">使ってる</span></div>
+    <p class="spec"><b>2,300円</b></p>
+    <p class="rev"><span class="star">★ 4.58</span><span>楽天のレビュー 1,948件</span></p>
+    <a class="go" href="https://hb.afl.rakuten.co.jp/hgc/g00t45po.9mern46a.g00t45po.9mero9eb/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftsurunishi%2F905b01mtmmcmf%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ftsurunishi%2Fi%2F10000259%2F&rafcid=wsc_i_is_d6ca3db3-7718-4ca9-9b12-793de0ae759e" rel="nofollow sponsored noopener" target="_blank">楽天市場で見る</a>
+    <p class="why">しっとりとさっぱり、季節で入れ替えてる。冬はしっとりのほうを使っています</p>
+  </div>
+</div>
+<div class="card">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/attenir/cabinet/thum/157617_main_2606.jpg?_ex=300x300" alt="プリマモイスト ローション">
+  <div class="body">
+    <div class="brand">アテニア</div>
+    <div class="name">プリマモイスト ローション</div>
+    <p class="spec"><b>2,255円</b>　ボトル／つめかえ</p>
+    <p class="rev"><span class="star">★ 4.74</span><span>楽天のレビュー 1,674件</span></p>
+    <a class="go" href="https://hb.afl.rakuten.co.jp/hgc/g00tna6o.9merne6c.g00tna6o.9mero3ea/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fattenir%2F157617%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fattenir%2Fi%2F10000239%2F&rafcid=wsc_i_is_d6ca3db3-7718-4ca9-9b12-793de0ae759e" rel="nofollow sponsored noopener" target="_blank">楽天市場で見る</a>
+    <p class="why">今のがなくなったら、つめかえがあるものに変えたいと思っていて</p>
+  </div>
+</div>
+<div class="card">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/fancl-shop/cabinet/item-img/3500-3999/3742-31.jpg?_ex=300x300" alt="モイストリファイン 化粧液">
+  <div class="body">
+    <div class="brand">ファンケル</div>
+    <div class="name">モイストリファイン 化粧液</div>
+    <p class="spec"><b>1,540円</b></p>
+    <p class="rev"><span class="star">★ 4.69</span><span>楽天のレビュー 953件</span></p>
+    <a class="go" href="https://hb.afl.rakuten.co.jp/hgc/g00sms5o.9mernb58.g00sms5o.9merod3a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ffancl-shop%2F3742-31%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ffancl-shop%2Fi%2F10009885%2F&rafcid=wsc_i_is_d6ca3db3-7718-4ca9-9b12-793de0ae759e" rel="nofollow sponsored noopener" target="_blank">楽天市場で見る</a>
+    <p class="why">開封後の使いきり期間が決まっているタイプ。ちゃんと使い切れるか、そこだけ迷っています</p>
+  </div>
+</div>
+<div class="band">乳液<span class="n">1</span></div>
+<div class="card">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/attenir/cabinet/thum/thum/157714_2405.jpg?_ex=300x300" alt="プリマモイスト デイエマルジョン">
+  <div class="body">
+    <div class="brand">アテニア</div>
+    <div class="name">プリマモイスト デイエマルジョン</div>
+    <p class="spec"><b>1,815円</b>　ボトル／つめかえ</p>
+    <p class="rev"><span class="star">★ 4.69</span><span>楽天のレビュー 784件</span></p>
+    <a class="go" href="https://hb.afl.rakuten.co.jp/hgc/g00tna6o.9merne6c.g00tna6o.9mero3ea/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fattenir%2F157714%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fattenir%2Fi%2F10000244%2F&rafcid=wsc_i_is_d6ca3db3-7718-4ca9-9b12-793de0ae759e" rel="nofollow sponsored noopener" target="_blank">楽天市場で見る</a>
+    <p class="why">日中用の乳液です。つめかえがあるのがいいなと思って見ています</p>
+  </div>
+</div>
+<div class="band">オールインワン<span class="n">1</span></div>
+<div class="card">
+  <div class="noimg">写真なし</div>
+  <div class="body">
+    <div class="brand">PICOMONTE</div>
+    <div class="name">オールインワンジェル 180g（ボタニカル）<span class="used">使ってる</span></div>
+    <p class="spec"><b>1,000円</b></p>
+    <p class="rev"><span class="star">★ 4.35</span><span>楽天のレビュー 846件</span></p>
+    <a class="go" href="https://hb.afl.rakuten.co.jp/hgc/g00r97bo.9mern6d0.g00r97bo.9mero959/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fa-cueb%2Fbota-ag%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fa-cueb%2Fi%2F10004890%2F&rafcid=wsc_i_is_d6ca3db3-7718-4ca9-9b12-793de0ae759e" rel="nofollow sponsored noopener" target="_blank">楽天市場で見る</a>
+    <p class="why">スパチュラを探さなくていいだけで、朝がちがう。ポンプ式にしてから、だいぶ楽になりました</p>
+  </div>
+</div>
+<div class="band">シートマスク<span class="n">1</span></div>
+<div class="card">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/apm24/cabinet/mjcare/mj_care_20_20sn.jpg?_ex=300x300" alt="エッセンスマスク お試し 20種20枚">
+  <div class="body">
+    <div class="brand">MJCARE</div>
+    <div class="name">エッセンスマスク お試し 20種20枚<span class="used">使ってる</span></div>
+    <p class="spec"><b>1,200円</b>　個包装</p>
+    <p class="rev"><span class="star">★ 4.58</span><span>楽天のレビュー 4,610件</span></p>
+    <a class="go" href="https://hb.afl.rakuten.co.jp/hgc/g00qecio.9mernb62.g00qecio.9mero81e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fapm24%2Fmjst40206n-22-set%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fapm24%2Fi%2F10002137%2F&rafcid=wsc_i_is_d6ca3db3-7718-4ca9-9b12-793de0ae759e" rel="nofollow sponsored noopener" target="_blank">楽天市場で見る</a>
+    <p class="why">20種類入ってるから、その日の気分で選べる。選ぶのが面倒な日もあるので、そこは好みが分かれるかも</p>
+  </div>
+</div>
+<div class="band">日やけ止め<span class="n">2</span></div>
+<div class="card">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/attenir/cabinet/thum/thum/165204_2506.jpg?_ex=300x300" alt="陽断UV50 ブライト&プロテクト クリーム">
+  <div class="body">
+    <div class="brand">アテニア</div>
+    <div class="name">陽断UV50 ブライト&プロテクト クリーム</div>
+    <p class="spec"><b>1,980円</b>　SPF50+・PA++++</p>
+    <p class="rev"><span class="star">★ 4.67</span><span>楽天のレビュー 1,086件</span></p>
+    <a class="go" href="https://hb.afl.rakuten.co.jp/hgc/g00tna6o.9merne6c.g00tna6o.9mero3ea/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fattenir%2F165204%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fattenir%2Fi%2F10000284%2F&rafcid=wsc_i_is_d6ca3db3-7718-4ca9-9b12-793de0ae759e" rel="nofollow sponsored noopener" target="_blank">楽天市場で見る</a>
+    <p class="why">1本5役と書いてあって、増やさなくていいのが気になっています</p>
+  </div>
+</div>
+<div class="card">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/fancl-shop/cabinet/item-img/3000-3499/3200-31.jpg?_ex=300x300" alt="スキンケアベース ラスティングUV">
+  <div class="body">
+    <div class="brand">ファンケル</div>
+    <div class="name">スキンケアベース ラスティングUV</div>
+    <p class="spec"><b>2,200円</b>　SPF34・PA+++</p>
+    <p class="rev"><span class="star">★ 4.59</span><span>楽天のレビュー 183件</span></p>
+    <a class="go" href="https://hb.afl.rakuten.co.jp/hgc/g00sms5o.9mernb58.g00sms5o.9merod3a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ffancl-shop%2Fsclasting%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ffancl-shop%2Fi%2F10010310%2F&rafcid=wsc_i_is_d6ca3db3-7718-4ca9-9b12-793de0ae759e" rel="nofollow sponsored noopener" target="_blank">楽天市場で見る</a>
+    <p class="why">日やけ止めと化粧下地を兼ねるタイプ。冬は塗るのを忘れがちなので、下地と一緒なら続きそう</p>
+  </div>
+</div>
+<div class="band">フェイスパウダー<span class="n">1</span></div>
+<div class="card">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/naturalcosmetic/cabinet/silkpowder-mk2.jpg?_ex=300x300" alt="シルク100% フェイスパウダー 7g">
+  <div class="body">
+    <div class="brand">シルクパウダー</div>
+    <div class="name">シルク100% フェイスパウダー 7g<span class="used">使ってる</span></div>
+    <p class="spec"><b>935円</b></p>
+    <p class="rev"><span class="star">★ 4.45</span><span>楽天のレビュー 1,569件</span></p>
+    <a class="go" href="https://hb.afl.rakuten.co.jp/hgc/g00ps7eo.9mernea9.g00ps7eo.9mero577/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnaturalcosmetic%2Fsilkpowder20%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fnaturalcosmetic%2Fi%2F10000961%2F&rafcid=wsc_i_is_d6ca3db3-7718-4ca9-9b12-793de0ae759e" rel="nofollow sponsored noopener" target="_blank">楽天市場で見る</a>
+    <p class="why">夜、これだけはたいて寝る日がある。さらさらして、朝までそのまま。ただ、原料の匂いが少しあります</p>
+  </div>
+</div>
+<div class="band">リップ<span class="n">4</span></div>
+<div class="card">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/fancl-shop/cabinet/item-img/3000-3499/3090-41.jpg?_ex=300x300" alt="リップクリーム">
+  <div class="body">
+    <div class="brand">ファンケル</div>
+    <div class="name">リップクリーム</div>
+    <p class="spec"><b>990円</b>　1.9g</p>
+    <p class="rev"><span class="star">★ 4.7</span><span>楽天のレビュー 389件</span></p>
+    <a class="go" href="https://hb.afl.rakuten.co.jp/hgc/g00sms5o.9mernb58.g00sms5o.9merod3a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ffancl-shop%2F3090-01%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ffancl-shop%2Fi%2F10000233%2F&rafcid=wsc_i_is_d6ca3db3-7718-4ca9-9b12-793de0ae759e" rel="nofollow sponsored noopener" target="_blank">楽天市場で見る</a>
+    <p class="why">千円いかないので、毎年買う分にはこの値段です</p>
+  </div>
+</div>
+<div class="card">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/fancl-shop/cabinet/item-img/3091-01.jpg?_ex=300x300" alt="リップトリートメント">
+  <div class="body">
+    <div class="brand">ファンケル</div>
+    <div class="name">リップトリートメント</div>
+    <p class="spec"><b>1,320円</b></p>
+    <p class="rev"><span class="star">★ 4.73</span><span>楽天のレビュー 339件</span></p>
+    <a class="go" href="https://hb.afl.rakuten.co.jp/hgc/g00sms5o.9mernb58.g00sms5o.9merod3a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ffancl-shop%2F3091-01%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ffancl-shop%2Fi%2F10000232%2F&rafcid=wsc_i_is_d6ca3db3-7718-4ca9-9b12-793de0ae759e" rel="nofollow sponsored noopener" target="_blank">楽天市場で見る</a>
+    <p class="why">リップ美容液という書かれ方をしていて、気になっています</p>
+  </div>
+</div>
+<div class="card">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/houseofrose-shop/cabinet/item/ohbaby_series/44863-001.jpg?_ex=300x300" alt="Oh!Baby スクラブリップバーム">
+  <div class="body">
+    <div class="brand">ハウス オブ ローゼ</div>
+    <div class="name">Oh!Baby スクラブリップバーム</div>
+    <p class="spec"><b>1,100円</b>　4g・無色</p>
+    <p class="rev"><span class="star">★ 4.62</span><span>楽天のレビュー 185件</span></p>
+    <a class="go" href="https://hb.afl.rakuten.co.jp/hgc/g00u1gbo.9merndf2.g00u1gbo.9mero848/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhouseofrose-shop%2F44863%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fhouseofrose-shop%2Fi%2F10000028%2F&rafcid=wsc_i_is_d6ca3db3-7718-4ca9-9b12-793de0ae759e" rel="nofollow sponsored noopener" target="_blank">楽天市場で見る</a>
+    <p class="why">スクラブと書いてあって、どんな感じなのか気になっています</p>
+  </div>
+</div>
+<div class="card">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/attenir/cabinet/thum/thum/140604_2409.jpg?_ex=300x300" alt="エンリッチリップオイル">
+  <div class="body">
+    <div class="brand">アテニア</div>
+    <div class="name">エンリッチリップオイル</div>
+    <p class="spec"><b>1,540円</b></p>
+    <p class="rev"><span class="star">★ 4.69</span><span>楽天のレビュー 135件</span></p>
+    <a class="go" href="https://hb.afl.rakuten.co.jp/hgc/g00tna6o.9merne6c.g00tna6o.9mero3ea/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fattenir%2F140604%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fattenir%2Fi%2F10000357%2F&rafcid=wsc_i_is_d6ca3db3-7718-4ca9-9b12-793de0ae759e" rel="nofollow sponsored noopener" target="_blank">楽天市場で見る</a>
+    <p class="why">オイルタイプ。手持ちと使い分けられるのか、まだ分かっていません</p>
+  </div>
+</div>
+<div class="band">ハンドクリーム<span class="n">1</span></div>
+<div class="card">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/tsurunishi/cabinet/allna/top/905b072wnfzkl.jpg?_ex=300x300" alt="ハンドクリーム">
+  <div class="body">
+    <div class="brand">オルナ オーガニック</div>
+    <div class="name">ハンドクリーム</div>
+    <p class="spec"><b>1,100円</b></p>
+    <p class="rev"><span class="star">★ 4.7</span><span>楽天のレビュー 749件</span></p>
+    <a class="go" href="https://hb.afl.rakuten.co.jp/hgc/g00t45po.9mern46a.g00t45po.9mero9eb/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftsurunishi%2F905b072wnfzkl%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ftsurunishi%2Fi%2F10000265%2F&rafcid=wsc_i_is_d6ca3db3-7718-4ca9-9b12-793de0ae759e" rel="nofollow sponsored noopener" target="_blank">楽天市場で見る</a>
+    <p class="why">化粧水と同じところのもの。わたしが毎年買うのは千円いかないものなので、これは気になっている方です</p>
+  </div>
+</div>
+
+<div class="note">
+    <p>※ このページには<b>楽天アフィリエイトのリンク</b>が含まれます。ここから購入されると、売上の一部が運営者に入ることがあります。</p>
+    <p>※ <b>わたしが使ったことのない商品も入っています。</b>どれを使ったことがあるかは、各商品の下に書いています。</p>
+    <p>※ 効き目や効果については書いていません。肌に合うかどうかは人によって違います。合わないときは使用をやめてください。</p>
+    <p>※ 星の数とレビュー件数は<b>楽天市場のもの</b>です。<b>レビューの文章は載せていません。</b></p>
+    <p>※ 値段・星・件数は <b>2026年11月20日</b> に楽天市場で見たものです。変わることがあります。</p>
+  </div>
+
+<footer>
+  <p><b>どれを載せるか</b>は、わたしの基準（上の「どう選んだか」）で決めました。<b>並び順</b>は、種類ごとに楽天市場のレビュー件数が多い順です。<b>順位ではありません。</b></p>
+  <p>テストや採点はしていません。星の数とレビュー件数は楽天市場の数字をそのまま書いたもので、<b>レビューの文章は引用していません</b>。</p>
+  <p>化粧品は人によって合う合わないがあります。合わないときは使用をやめてください。</p>
+  <p>2026年11月20日 時点 ／ <a href="care.html">3分で終わるスキンケア（やり方のほう）</a> ／ <a href="100kin.html">ここは100均でいい</a></p>
+</footer>
+
+</div>
